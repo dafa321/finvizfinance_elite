@@ -252,6 +252,10 @@ class Overview:
             print("No ticker found.")
             return None
 
+        if limit != -1:
+            if page > (limit - 1) // 20 + 1:
+                page = (limit - 1) // 20 + 1
+
         start_page = 1
         end_page = page
 
@@ -263,10 +267,6 @@ class Overview:
                 warnings.warn("Limit parameter is ignored when page is selected.")
             start_page = select_page - 1
             end_page = select_page
-
-        if limit != -1:
-            if page > (limit - 1) // 20 + 1:
-                page = (limit - 1) // 20 + 1
 
         if verbose == 1:
             if not select_page:
