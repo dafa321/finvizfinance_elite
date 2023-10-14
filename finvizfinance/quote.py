@@ -16,7 +16,7 @@ from finvizfinance.util import (
     format_datetime,
 )
 
-QUOTE_URL = "https://finviz.com/quote.ashx?t={ticker}"
+QUOTE_URL = "https://elite.finviz.com/quote.ashx?t={ticker}"
 NUM_COL = [
     "P/E",
     "EPS (ttm)",
@@ -41,7 +41,7 @@ class Quote:
         Returns:
             price(float): price of the ticker
         """
-        soup = web_scrap("https://finviz.com/request_quote.ashx?t={}".format(ticker))
+        soup = web_scrap("https://elite.finviz.com/request_quote.ashx?t={}".format(ticker))
         return soup.text
 
 
@@ -111,7 +111,7 @@ class finvizfinance:
             url_timeframe = "w"
         elif timeframe == "monthly":
             url_timeframe = "m"
-        chart_url = "https://finviz.com/chart.ashx?t={ticker}&ty={type}&ta={ta}&p={timeframe}".format(
+        chart_url = "https://elite.finviz.com/chart.ashx?t={ticker}&ty={type}&ta={ta}&p={timeframe}".format(
             ticker=self.ticker, type=url_type, ta=url_ta, timeframe=url_timeframe
         )
         if not urlonly:
@@ -412,7 +412,7 @@ class Statements:
         Returns:
             df(pandas.DataFrame): statements table
         """
-        url = "https://finviz.com/api/statement.ashx?t={ticker}&s={statement}{timeframe}".format(
+        url = "https://elite.finviz.com/api/statement.ashx?t={ticker}&s={statement}{timeframe}".format(
             ticker=ticker, statement=statement, timeframe=timeframe
         )
         try:
