@@ -28,7 +28,7 @@ class Overview:
     def __init__(self):
         """initiate module"""
         self.BASE_URL = (
-            "https://finviz.com/screener.ashx?v={v_page}{signal}{filter}&ft=4{ticker}"
+            "https://elite.finviz.com/screener.ashx?v={v_page}{signal}{filter}&ft=4{ticker}"
         )
         self.url = self.BASE_URL.format(
             v_page=self.v_page, signal="", filter="", ticker=""

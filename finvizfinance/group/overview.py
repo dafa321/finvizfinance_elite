@@ -17,7 +17,7 @@ class Overview:
 
     def __init__(self):
         """initiate module"""
-        self.BASE_URL = "https://finviz.com/groups.ashx?{group}&v={v_page}"
+        self.BASE_URL = "https://elite.finviz.com/groups.ashx?{group}&v={v_page}"
         self.url = self.BASE_URL.format(group="g=sector", v_page=self.v_page)
         self._load_setting()
 

@@ -43,7 +43,7 @@ class Future:
         else:
             raise ValueError("Invalid timeframe '{}'".format(timeframe))
 
-        soup = web_scrap("https://finviz.com/futures_performance.ashx" + params)
+        soup = web_scrap("https://elite.finviz.com/futures_performance.ashx" + params)
 
         html = soup.prettify()
         data = html[

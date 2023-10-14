@@ -184,7 +184,7 @@ def image_scrap_function(url, chart, timeframe, urlonly):
         name = website.split("?")[1].split("&")[0].split(".")[0]
         chart_name = name.split("_")[0]
         if chart.lower() == chart_name:
-            charturl = "https://finviz.com/" + website
+            charturl = "https://elite.finviz.com/" + website
             if not urlonly:
                 image_scrap(charturl, name, "")
             return charturl
